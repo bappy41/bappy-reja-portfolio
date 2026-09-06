@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#070b12;
+  --surface:#0d131d;
+  --line:rgba(255,255,255,.09);
+  --muted:rgba(233,241,246,.62);
+  --cyan:#4de1ff;
+  --lime:#b8f36b;
+  --paper:#eef5f7;
+}
+html{scroll-behavior:smooth;background:var(--bg);}
+body{margin:0;background:var(--bg);color:var(--paper);font-family:"IBM Plex Sans",sans-serif;}
+::selection{background:#4de1ff;color:#071018;}
+.focus-ring:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;}
+::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:#070b12}::-webkit-scrollbar-thumb{background:#243140;border-radius:9px}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;}
+.noise{position:relative}.noise:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");}
+.glow{box-shadow:0 0 80px rgba(77,225,255,.11);}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.18);}
+.card-hover{transition:transform .35s ease,border-color .35s ease,background .35s ease;}.card-hover:hover{transform:translateY(-5px);border-color:rgba(77,225,255,.32);background:linear-gradient(145deg,rgba(77,225,255,.08),rgba(255,255,255,.025));}
+.section-dark{background:#070b12}.section-light{background:#f1f5f4;color:#091019;}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;}
+.display{font-family:"Fraunces",serif;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
